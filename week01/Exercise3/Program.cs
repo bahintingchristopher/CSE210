@@ -42,8 +42,9 @@ class Program
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("You guessed it!");
-                        Console.WriteLine($"Your got it by {attemptCount} attempts.");
+                        Console.WriteLine($"You got it by {attemptCount} attempts.");
                     }
                 }
                 else
@@ -53,7 +54,7 @@ class Program
             }
 
 
-
+            Console.WriteLine();
             Console.Write("Do you want to play again? ");
             string response = Console.ReadLine().Trim().ToLower();
 
@@ -61,6 +62,7 @@ class Program
             {
                 playAgain = false;
                 Console.WriteLine("Thank you for playing with us!");
+                Console.WriteLine();
             }
         }
 
