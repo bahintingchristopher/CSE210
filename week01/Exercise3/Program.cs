@@ -57,6 +57,7 @@ class Program
             Console.WriteLine();
             Console.Write("Do you want to play again? ");
             string response = Console.ReadLine().Trim().ToLower();
+            Console.WriteLine();
 
             if (response != "yes")
             {
