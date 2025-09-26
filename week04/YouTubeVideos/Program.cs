@@ -8,27 +8,49 @@ class Program
     {
         Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
 
-
-        //creation of address
-        Address address = new Address("254 Riverside Poblacion", "Kananga", "Leyte", "Philippines");
-
-        //customer
-        Customer customer = new Customer("Christopher Bahinting", address);
-
-        //products
-        Product purpleCornJuice = new Product("Purple Corn Juice", "PCJ100", 4.50, 3);
-        Product purpleCornChocolate = new Product("Purple Corn Chocolate", "PCC200", 2.25, 5);
-
-        //ADDING PRODUCT TO LIST
-        List<Product> products = new List<Product> { purpleCornJuice, purpleCornChocolate };
-
-        //order
-        Order order = new Order(products, customer);
-
-        Console.WriteLine(order.GetPackingLabel());
         Console.WriteLine();
-        Console.WriteLine(order.GetShippingLabel());
-        Console.WriteLine();
-        Console.WriteLine($"Total Price: ${order.GetTotalCost():0.00}");
+
+        List<Video> videos = new List<Video>();
+
+        Video videoA = new Video("The Road to Damascus.", "Pual the Apostle", 900);
+        videoA.AddComment(new Comment("Precious", "Wow! A very powerful moment of transformation."));
+        videoA.AddComment(new Comment("Charity", "Awesome! The Faith restored through divine call."));
+        videoA.AddComment(new Comment("Christoff", "Great! This is the real missionary service,"));
+        videoA.AddComment(new Comment("Mercy", "Amazing! very wonderful movie."));
+        videos.Add(videoA);
+
+        Video videoB = new Video("The Turning of Water into Wine.", "Jesus of Nazareth", 550);
+        videoB.AddComment(new Comment("Precious", "This is the real power of God."));
+        videoB.AddComment(new Comment("Charity", "A mother's faith and trust."));
+        videoB.AddComment(new Comment("Christoff", "A miracle that change everything."));
+        videos.Add(videoB);
+
+        Video videoC = new Video("Peter: The Fisherman's Journey.", "Peter the Apostle", 1500);
+        videoC.AddComment(new Comment("Precious", "What a miracle!"));
+        videoC.AddComment(new Comment("Charity", "His courage inspired me."));
+        videoC.AddComment(new Comment("Christofferson", "I like the movie so much."));
+        videoC.AddComment(new Comment("Ismael", "Full of fishes, they became rich spiritually."));
+        videoC.AddComment(new Comment("Barok", "Very interesting!"));
+        videos.Add(videoC);
+
+        foreach (var video in videos)
+        {
+            Console.WriteLine($"Title: {video.Title}");
+            Console.WriteLine($"Author: {video.Author}");
+            Console.WriteLine($"Lenght: {video.LengthInSeconds} (seconds)");
+            Console.WriteLine($"Number of Comments: {video.GetCommentCount()}");
+            Console.WriteLine("COMMENTS:");
+
+            foreach (var comment in video.GetComments())
+            {
+                Console.WriteLine($" {comment.Name}: {comment.Text}");
+            }
+            Console.WriteLine();
+            Console.WriteLine("*******************************************************************");
+
+        }
+        
+
+
     }
 }
