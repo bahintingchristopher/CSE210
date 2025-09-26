@@ -12,7 +12,7 @@ class Program
 
         List<Video> videos = new List<Video>();
 
-        Video videoA = new Video("The Road to Damascus.", "Pual the Apostle", 900);
+        Video videoA = new Video("The Road to Damascus.", "Paul the Apostle", 900);
         videoA.AddComment(new Comment("Precious", "Wow! A very powerful moment of transformation."));
         videoA.AddComment(new Comment("Charity", "Awesome! The Faith restored through divine call."));
         videoA.AddComment(new Comment("Christoff", "Great! This is the real missionary service,"));
@@ -37,7 +37,7 @@ class Program
         {
             Console.WriteLine($"Title: {video.Title}");
             Console.WriteLine($"Author: {video.Author}");
-            Console.WriteLine($"Lenght: {video.LengthInSeconds} (seconds)");
+            Console.WriteLine($"Length: {video.LengthInSeconds} (seconds)");
             Console.WriteLine($"Number of Comments: {video.GetCommentCount()}");
             Console.WriteLine("COMMENTS:");
 
