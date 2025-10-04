@@ -62,7 +62,7 @@ class Program
     //this code below is part of the additonal creativity
     //the program has the ability to log each activity with a timestamp to a text file
     //the log file is named "Mindfulness_ctivity_log.txt"
-     private static readonly string logFilePath = "Mindfulness_ctivity_log.txt";
+     private static readonly string logFilePath = "MindfulnessActivityLog.txt";
 
     public static void log(string activityName, string message)
     {
